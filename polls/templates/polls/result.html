@@ -11,7 +11,8 @@
         
         <ul>
             {% for choice in question.choice_set.all %}
-                <li>{{ choice.choice_text }} -- {{ choice.votes }} vote {{ choice.votes|pluralize }}</li>
+                <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li> 
+                {% comment %} pluralize: choice.votes가 1보다 클 경우 복수형(s) 추가 {% endcomment %}
             {% endfor %}
         </ul>
 
